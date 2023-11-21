@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Asus WebStorage/psabin@gmail.com/MySyncFolder/Data Science Course/DB Browser databases/Day2.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="150"/><column_width id="3" width="1438"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,9:mainEmployees"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="Departments" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="71"/><column index="2" value="167"/><column index="3" value="94"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Employees" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="106"/><column index="2" value="102"/><column index="3" value="120"/><column index="4" value="142"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Manufacturers" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="62"/><column index="2" value="154"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Products" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="62"/><column index="2" value="144"/><column index="3" value="63"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1">CREATE TABLE IF NOT EXISTS Departments (
+  Code INTEGER,
+  Name TEXT NOT NULL,
+  Budget decimal NOT NULL,
+  PRIMARY KEY (Code)   
+);
+
+CREATE TABLE IF NOT EXISTS Employees (
+  SSN INTEGER,
+  Name varchar(255) NOT NULL ,
+  LastName varchar(255) NOT NULL ,
+  Department INTEGER NOT NULL , 
+  PRIMARY KEY (SSN)   
+);
+
+
+INSERT INTO Departments(Code,Name,Budget) VALUES(14,'IT',65000);
+INSERT INTO Departments(Code,Name,Budget) VALUES(37,'Accounting',15000);
+INSERT INTO Departments(Code,Name,Budget) VALUES(59,'Human Resources',240000);
+INSERT INTO Departments(Code,Name,Budget) VALUES(77,'Research',55000);
+
+INSERT INTO Employees(SSN,Name,LastName,Department) VALUES('123234877','Michael','Rogers',14);
+INSERT INTO Employees(SSN,Name,LastName,Department) VALUES('152934485','Anand','Manikutty',14);
+INSERT INTO Employees(SSN,Name,LastName,Department) VALUES('222364883','Carol','Smith',37);
+INSERT INTO Employees(SSN,Name,LastName,Department) VALUES('326587417','Joe','Stevens',37);
+INSERT INTO Employees(SSN,Name,LastName,Department) VALUES('332154719','Mary-Anne','Foster',14);
+INSERT INTO Employees(SSN,Name,LastName,Department) VALUES('332569843','George','ODonnell',77);
+INSERT INTO Employees(SSN,Name,LastName,Department) VALUES('546523478','John','Doe',59);
+INSERT INTO Employees(SSN,Name,LastName,Department) VALUES('631231482','David','Smith',77);
+INSERT INTO Employees(SSN,Name,LastName,Department) VALUES('654873219','Zacary','Efron',59);
+INSERT INTO Employees(SSN,Name,LastName,Department) VALUES('745685214','Eric','Goldsmith',59);
+INSERT INTO Employees(SSN,Name,LastName,Department) VALUES('845657245','Elizabeth','Doe',14);
+INSERT INTO Employees(SSN,Name,LastName,Department) VALUES('845657246','Kumar','Swamy',14);
+
+SELECT LastName
+FROM Employees
+--2.1
+SELECT DISTINCT LastName
+FROM Employees
+--2.3
+SELECT * 
+FROM Employees
+WHERE LastName='Smith'
+--2.4
+SELECT * 
+FROM Employees
+WHERE LastName='Smith'</sql><current_tab id="0"/></tab_sql></sqlb_project>
